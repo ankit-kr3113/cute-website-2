@@ -224,7 +224,7 @@ export default function ActivityPage({
                       <div className="w-6 h-6 rounded-full bg-[#f04299] flex items-center justify-center text-white text-sm">
                         💝
                       </div>
-                      <span className="text-sm font-semibold text-[#9a4c73]">{textConfig.letter.letterHeaderTitle}</span>
+                      <span className="text-sm font-semibold text-[#9a4c73]">{content.letter.letterHeaderTitle}</span>
                     </div>
                   </div>
 
