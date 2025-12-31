@@ -123,7 +123,7 @@ export default function ActivityPage({
         </div>
 
         {/* Main Panel */}
-        <div className="bg-[#FFF8E7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-pink-200 shadow-xl animate-fadeIn">
+        <div className="bg-[#FFF8E7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-pink-200 shadow-2xl shadow-pink-200/30 animate-fadeIn">
           
           {!showLetter ? (
             /* Envelope Section */
