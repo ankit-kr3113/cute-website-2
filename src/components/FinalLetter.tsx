@@ -85,7 +85,19 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
   };
 
   return (
-    <div className="font-display min-h-screen flex items-center justify-center py-10 px-4 bg-[#FFF4F8] relative overflow-hidden">
+    <div className="font-display min-h-screen flex items-center justify-center py-10 px-4 relative overflow-hidden">
+      {/* Romantic blurred background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url("https://images.pexels.com/photos/1024975/pexels-photo-1024975.jpeg")',
+            filter: 'blur(35px) brightness(0.5) sepia(0.2)',
+            opacity: 0.3
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FFF4F8] via-[rgba(255,240,245,0.8)] to-[#FFF0F5]" />
+      </div>
       {/* subtle grid-paper behind */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute inset-0 grid-paper" />
