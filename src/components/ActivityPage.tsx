@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import textConfig from "../textConfig";
+import content from "../data/content";
 import LetterImg from "../imgs/letter.png"
 import StampSVG from "./StampSVG";
 
@@ -19,9 +19,9 @@ export default function ActivityPage({
   const [sparkles, setSparkles] = useState<{ id: number; x: number; y: number }[]>([]);
 
   // Get the letter content from separate fields
-  const greeting = textConfig.letter.letterGreeting;
-  const bodyContent = textConfig.letter.letterMessage;
-  const signature = textConfig.letter.letterSignature;
+  const greeting = content.letter.letterGreeting;
+  const bodyContent = content.letter.letterMessage;
+  const signature = content.letter.letterSignature;
 
   // Handle envelope opening
   const handleEnvelopeClick = () => {
@@ -114,16 +114,16 @@ export default function ActivityPage({
         <div className="flex items-center justify-center gap-2 mb-6 animate-slideDown">
           <div className="text-center">
             <h2 className="text-[#f04299] text-lg sm:text-xl font-bold leading-tight">
-              {textConfig.letter.headerTitle}
+              {content.letter.headerTitle}
             </h2>
             <div className="text-xs text-[#9a4c73] mt-1">
-              {textConfig.letter.headerSubtitle}
+              {content.letter.headerSubtitle}
             </div>
           </div>
         </div>
 
         {/* Main Panel */}
-        <div className="bg-[#FFF8E7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-pink-200 shadow-xl animate-fadeIn">
+        <div className="bg-[#FFF8E7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-pink-200 shadow-2xl shadow-pink-200/30 animate-fadeIn">
           
           {!showLetter ? (
             /* Envelope Section */
@@ -153,11 +153,11 @@ export default function ActivityPage({
                 {/* Envelope */}
                 <div className="relative w-80 h-56 mx-auto">
                   {/* Envelope Body */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#FFE4E6] to-[#FFF0F5] rounded-lg shadow-lg border-2 border-pink-200" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#FFE4E6] to-[#FFF0F5] rounded-lg shadow-2xl shadow-pink-200/40 border-2 border-pink-300" />
                   
                   {/* Envelope Flap */}
-                  <div 
-                    className={`absolute -top-1 left-0 right-0 h-28 bg-gradient-to-br from-[#FFD1DC] to-[#FFC0CB] transition-all duration-800 origin-top ${
+                  <div
+                    className={`absolute -top-1 left-0 right-0 h-28 bg-gradient-to-br from-[#FFD1DC] to-[#FFC0CB] transition-all duration-800 origin-top shadow-md ${
                       isEnvelopeOpen ? '-rotate-12 translate-y-2' : ''
                     }`}
                     style={{
@@ -185,9 +185,9 @@ export default function ActivityPage({
 
                 {!isEnvelopeOpen && (
                   <div className="text-center mt-6">
-                    <p className="text-sm text-[#9a4c73] mb-2">{textConfig.letter.envelopeClickHint}</p>
+                    <p className="text-sm text-[#9a4c73] mb-2">{content.letter.envelopeClickHint}</p>
                     <div className="inline-block px-4 py-2 bg-pink-50 rounded-full text-xs font-medium text-[#f04299] border border-pink-200 animate-pulse">
-                      {textConfig.letter.specialDeliveryText}
+                      {content.letter.specialDeliveryText}
                     </div>
                   </div>
                 )}
@@ -199,6 +199,17 @@ export default function ActivityPage({
               <div className="bg-white rounded-xl p-6 sm:p-8 shadow-inner border border-pink-100 min-h-[350px] relative">
                 {/* Paper texture background */}
                 <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-pink-50 to-transparent rounded-xl" />
+
+                {/* Romantic watermark photo */}
+                <div
+                  className="absolute top-4 right-4 w-28 h-28 sm:w-32 sm:h-32 rounded-lg overflow-hidden opacity-8 pointer-events-none"
+                  style={{
+                    backgroundImage: 'url("https://images.pexels.com/photos/28800805/pexels-photo-28800805.jpeg")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: 'grayscale(80%) sepia(20%)',
+                  }}
+                />
                 
                 {/* Letter image - positioned relative to this letter container */}
                 <div 
@@ -224,7 +235,7 @@ export default function ActivityPage({
                       <div className="w-6 h-6 rounded-full bg-[#f04299] flex items-center justify-center text-white text-sm">
                         💝
                       </div>
-                      <span className="text-sm font-semibold text-[#9a4c73]">{textConfig.letter.letterHeaderTitle}</span>
+                      <span className="text-sm font-semibold text-[#9a4c73]">{content.letter.letterHeaderTitle}</span>
                     </div>
                   </div>
 
@@ -264,12 +275,12 @@ export default function ActivityPage({
 
               {/* Continue Button */}
               {showContinue && (
-                <div className="flex justify-center mt-6 animate-slideUp">
+                <div className="flex justify-center mt-8 animate-slideUp">
                   <button
                     onClick={onNext}
-                    className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
+                    className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-gradient-to-r from-[#f04299] to-[#f066b0] text-white font-bold shadow-lg shadow-pink-300/30 transition-all transform hover:scale-110 active:scale-95 hover:shadow-pink-400/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
                   >
-                    {textConfig.letter.continueButton}
+                    {content.letter.continueButton}
                   </button>
                 </div>
               )}

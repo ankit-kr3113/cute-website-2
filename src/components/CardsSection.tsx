@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import textConfig from '../textConfig';
+import content from '../data/content';
 
 import Img1 from "../imgs/pic1.gif"
 import Img2 from "../imgs/pic2.gif"
@@ -23,19 +23,19 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
   const cards: Card[] = [
     {
       id: 1,
-      message: textConfig.cards.cardMessages[0],
+      message: content.cards.cardMessages[0],
       localGif: Img1,
       gradient: "from-pink-200 to-purple-200"
     },
     {
       id: 2,
-      message: textConfig.cards.cardMessages[1],
+      message: content.cards.cardMessages[1],
       localGif: Img2,
       gradient: "from-blue-200 to-teal-200"
     },
     {
       id: 3,
-      message: textConfig.cards.cardMessages[2],
+      message: content.cards.cardMessages[2],
       localGif: Img3,
       gradient: "from-yellow-200 to-orange-200"
     },
@@ -104,30 +104,30 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
         <div className="flex items-center justify-center gap-2 mb-4 sm:mb-6 animate-slideDown">
           <div className="text-center">
             <h2 className="text-[#f04299] text-base sm:text-xl font-bold leading-tight">
-              {textConfig.cards.heading}
+              {content.cards.heading}
             </h2>
             <div className="text-xs text-[#9a4c73] mt-0.5">
-              {textConfig.cards.subheading}
+              {content.cards.subheading}
             </div>
           </div>
         </div>
 
-        {/* Main Panel - More compact */}
-        <div className="bg-[#FFF8E7] rounded-2xl sm:rounded-3xl p-3 sm:p-5 md:p-6 border border-pink-200 shadow-xl animate-fadeIn">
+        {/* Main Panel - Better spacing */}
+        <div className="bg-[#FFF8E7] rounded-2xl sm:rounded-3xl p-6 sm:p-7 md:p-8 border-2 border-pink-200 shadow-xl shadow-pink-200/20 animate-fadeIn">
 
-          {/* Cards Grid - Smaller cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+          {/* Cards Grid - Improved spacing */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
             {cards.map((card, index) => (
               <div
                 key={card.id}
-                className="relative h-44 sm:h-48 md:h-52 cursor-pointer perspective-1000 group animate-slideUp"
+                className="relative h-56 sm:h-60 md:h-64 cursor-pointer perspective-1000 group animate-slideUp"
                 style={{ animationDelay: `${index * 0.2}s` }}
                 onClick={() => flipCard(card.id)}
               >
                 <div className={`relative w-full h-full transition-transform duration-700 preserve-3d ${flippedCards.includes(card.id) ? 'rotate-y-180' : ''
                   }`}>
                   {/* Front of card - GIF */}
-                  <div className="absolute w-full h-full rounded-lg border-2 border-white shadow-lg backface-hidden overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300">
+                  <div className="absolute w-full h-full rounded-xl border-3 border-white shadow-xl shadow-pink-200/30 backface-hidden overflow-hidden hover:shadow-2xl hover:shadow-pink-300/40 hover:scale-105 transition-all duration-300">
                     <div className="relative w-full h-full">
                       <img
                         src={card.localGif}
@@ -142,7 +142,7 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
                       {/* Tap indicator */}
                       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="px-2 py-1 bg-white/95 rounded-full text-xs font-medium text-[#9a4c73] border border-pink-100 shadow-lg backdrop-blur-sm animate-pulse">
-                          {textConfig.cards.tapLabel}
+                          {content.cards.tapLabel}
                         </div>
                       </div>
 
@@ -154,7 +154,7 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
                   </div>
 
                   {/* Back of card - Message */}
-                  <div className="absolute w-full h-full bg-white rounded-lg border-2 border-pink-200 shadow-lg rotate-y-180 backface-hidden p-3 sm:p-4 flex flex-col justify-center">
+                  <div className="absolute w-full h-full bg-white rounded-xl border-3 border-pink-300 shadow-xl shadow-pink-200/30 rotate-y-180 backface-hidden p-4 sm:p-5 flex flex-col justify-center">
                     <div className="text-center space-y-2 h-full flex flex-col justify-center">
                       <div className="flex-1 flex items-center justify-center">
                         <div className="text-xs sm:text-sm leading-relaxed text-[#1b0d14] px-1 overflow-y-auto max-h-full">
@@ -177,10 +177,10 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
           <div className="text-center py-2 sm:py-3">
             <div className="text-xs sm:text-sm text-[#9a4c73] font-medium">
               {flippedCards.length === 0
-                ? textConfig.cards.progress.start
+                ? content.cards.progress.start
                 : flippedCards.length === cards.length
-                  ? textConfig.cards.progress.complete
-                  : textConfig.cards.progress.discovered(flippedCards.length, cards.length)
+                  ? content.cards.progress.complete
+                  : content.cards.progress.discovered(flippedCards.length, cards.length)
               }
             </div>
 
@@ -202,26 +202,26 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
             <div className="text-center space-y-3 sm:space-y-4">
               <div className="text-3xl sm:text-4xl animate-bounce">🎉</div>
               <h3 className="text-lg sm:text-xl font-bold text-[#f04299]">
-                {textConfig.cards.popup.title}
+                {content.cards.popup.title}
               </h3>
               <p className="text-sm text-[#9a4c73] leading-relaxed">
-                {textConfig.cards.popup.message}
+                {content.cards.popup.message}
               </p>
-              <div className="space-y-2.5 pt-1">
+              <div className="space-y-2.5 pt-2">
                 <button
                   onClick={() => {
                     closePopup();
                     onNext();
                   }}
-                  className="w-full inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#f04299] text-white font-semibold shadow-lg transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300 text-sm"
+                  className="w-full inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-[#f04299] to-[#f066b0] text-white font-bold shadow-lg shadow-pink-300/30 transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-400/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
                 >
-                  {textConfig.cards.popup.openFinal}
+                  {content.cards.popup.openFinal}
                 </button>
                 <button
                   onClick={closePopup}
                   className="w-full text-xs text-[#9a4c73] hover:text-[#f04299] transition-colors"
                 >
-                  {textConfig.cards.popup.stay}
+                  {content.cards.popup.stay}
                 </button>
               </div>
             </div>

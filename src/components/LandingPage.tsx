@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import IntroGif from "../imgs/intro.gif"
 import IntroImg from "../imgs/intro.png"
-import textConfig from "../textConfig";
+import content from "../data/content";
 
 type Props = {
   onEnter?: () => void;
@@ -30,15 +30,27 @@ const LandingPage: React.FC<Props> = ({
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
-      setTypedText(textConfig.landing.lastLine.slice(0, i));
+      setTypedText(content.landing.lastLine.slice(0, i));
       i++;
-      if (i > textConfig.landing.lastLine.length) clearInterval(interval);
+      if (i > content.landing.lastLine.length) clearInterval(interval);
     }, 40);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="font-display relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 md:px-10">
+      {/* Romantic blurred background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url("https://images.pexels.com/photos/6232552/pexels-photo-6232552.jpeg")',
+            filter: 'blur(40px) brightness(0.6)',
+            opacity: 0.25
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(255,182,193,0.15)] via-transparent to-[rgba(255,240,245,0.15)]" />
+      </div>
       {/* Floating pastel icons */}
       <svg
         className="absolute top-10 left-10 w-12 h-12 animate-float-slow"
@@ -75,7 +87,7 @@ const LandingPage: React.FC<Props> = ({
 
       {/* Main Diary Window */}
       <div
-        className="relative w-full max-w-2xl bg-[#FFF8E7] rounded-2xl shadow-lg border border-pink-200 p-6 sm:p-8 md:p-10 z-10 animate-fadeIn mx-auto"
+        className="relative w-full max-w-2xl bg-[#FFF8E7] rounded-2xl shadow-2xl shadow-pink-200/30 border-2 border-pink-200 p-6 sm:p-8 md:p-10 z-10 animate-fadeIn mx-auto"
       >
         {/* Floating transparent GIF */}
         <img
@@ -85,7 +97,7 @@ const LandingPage: React.FC<Props> = ({
         />
 
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-pink-200 pb-3 mb-6">
+        <div className="flex items-center justify-between border-b-2 border-pink-200 pb-4 mb-8">
           <div className="flex items-center gap-2">
             <span className="w-3.5 h-3.5 rounded-full bg-[#ff9ec7] border border-[#f081a9]" />
             <span className="w-3.5 h-3.5 rounded-full bg-[#fff07a] border border-[#f0cf52]" />
@@ -105,13 +117,13 @@ const LandingPage: React.FC<Props> = ({
 
         {/* Letter Content */}
         <div className="text-center space-y-6 relative">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1b0d14] leading-snug">
-            {textConfig.landing.title}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#1b0d14] leading-tight tracking-tight mb-2">
+            {content.landing.title}
           </h1>
 
-          <div className="text-[#1b0d14]/80 text-base md:text-lg leading-relaxed relative mx-auto max-w-lg">
+          <div className="text-[#1b0d14]/75 text-base md:text-lg leading-relaxed relative mx-auto max-w-lg">
             <p>
-              {textConfig.landing.subtitle}
+              {content.landing.subtitle}
             </p>
             <p className="pt-3">
               <span className="font-semibold text-[#f04299]">{typedText}</span>
@@ -122,9 +134,9 @@ const LandingPage: React.FC<Props> = ({
           {/* Continue Button */}
           <button
             onClick={handleEnter}
-            className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
+            className="mt-6 inline-flex items-center justify-center px-10 py-4 rounded-full bg-gradient-to-r from-[#f04299] to-[#f066b0] text-white font-bold shadow-lg shadow-pink-300/30 transition-all transform hover:scale-110 active:scale-95 hover:shadow-pink-400/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
           >
-            {textConfig.landing.button}
+            {content.landing.button}
           </button>
 
           {/* Landing page decorative image - positioned at bottom left of note */}
@@ -149,7 +161,7 @@ const LandingPage: React.FC<Props> = ({
 
       {/* Footer */}
       <div className="mt-8 text-xs text-[#9a4c73] text-center">
-        {textConfig.landing.footer}
+        {content.landing.footer}
       </div>
 
       {/* Animations */}

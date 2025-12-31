@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import textConfig from "../textConfig";
+import content from "../data/content";
 
 import music1 from "../music/music1.mp3";
 import music2 from "../music/music2.mp3";
@@ -23,9 +23,9 @@ interface ChillZoneProps {
 
 export default function ChillZone({ onNext }: ChillZoneProps) {
   const tracks: Track[] = [
-    { id: 1, title: textConfig.chillZone.tracks[0].title, caption: textConfig.chillZone.tracks[0].caption, src: music1, cover: cover1 },
-    { id: 2, title: textConfig.chillZone.tracks[1].title, caption: textConfig.chillZone.tracks[1].caption, src: music2, cover: cover2 },
-    { id: 3, title: textConfig.chillZone.tracks[2].title, caption: textConfig.chillZone.tracks[2].caption, src: music3, cover: cover3 },
+    { id: 1, title: content.chillZone.tracks[0].title, caption: content.chillZone.tracks[0].caption, src: music1, cover: cover1 },
+    { id: 2, title: content.chillZone.tracks[1].title, caption: content.chillZone.tracks[1].caption, src: music2, cover: cover2 },
+    { id: 3, title: content.chillZone.tracks[2].title, caption: content.chillZone.tracks[2].caption, src: music3, cover: cover3 },
   ];
 
   const audioRefs = useRef<Array<HTMLAudioElement | null>>([]);
@@ -212,23 +212,23 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="text-center">
             <h2 className="text-[#f04299] text-lg font-bold leading-tight">
-              {textConfig.chillZone.heading}
+              {content.chillZone.heading}
             </h2>
             <div className="text-xs text-[#9a4c73]">
-              {textConfig.chillZone.subheading}
+              {content.chillZone.subheading}
             </div>
           </div>
         </div>
 
         {/* Main Panel - centered with proper margins */}
-        <div className="bg-[#FFF8E7] rounded-2xl p-4 sm:p-5 md:p-6 border border-pink-200 shadow-md animate-fadeIn mx-auto">
+        <div className="bg-[#FFF8E7] rounded-2xl p-6 sm:p-7 md:p-8 border-2 border-pink-200 shadow-xl shadow-pink-200/20 animate-fadeIn mx-auto">
 
           {/* Fixed height container for consistent spacing */}
-          <div className="mb-6 h-20 flex items-center justify-center">
+          <div className="mb-8 h-28 flex items-center justify-center">
             {/* Compact Now Playing Display */}
             {activeIndex != null ? (
-              <div className="flex items-center gap-4 p-3 rounded-lg bg-white/70 border border-pink-100 shadow-sm max-w-lg w-full mx-auto">
-                <div className="w-12 h-12 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 shadow-sm">
+              <div className="flex items-center gap-4 p-4 sm:p-5 rounded-xl bg-white/85 backdrop-blur-sm border border-pink-200 shadow-lg shadow-pink-200/20 max-w-lg w-full mx-auto">
+                <div className="w-16 h-16 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 shadow-md ring-2 ring-pink-100">
                   <img
                     src={tracks[activeIndex].cover}
                     alt={tracks[activeIndex].title}
@@ -281,7 +281,7 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
               </div>
             ) : (
               <div className="text-base text-[#9a4c73] font-medium text-center">
-                {textConfig.chillZone.chooseTrackHint}
+                {content.chillZone.chooseTrackHint}
               </div>
             )}
           </div>
@@ -401,9 +401,9 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
           <div className="text-center">
             <button
               onClick={onNext}
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
+              className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-gradient-to-r from-[#f04299] to-[#f066b0] text-white font-bold shadow-lg shadow-pink-300/30 transition-all transform hover:scale-110 active:scale-95 hover:shadow-pink-400/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
             >
-              {textConfig.chillZone.continueButton}
+              {content.chillZone.continueButton}
             </button>
           </div>
         </div>

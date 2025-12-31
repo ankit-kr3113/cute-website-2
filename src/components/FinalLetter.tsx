@@ -1,7 +1,7 @@
 // src/components/FinalLetter.tsx
 import React, { useEffect, useRef, useState } from "react";
 import { Mail, Heart, Star } from "lucide-react";
-import textConfig from "../textConfig";
+import content from "../data/content";
 
 interface FinalLetterProps {
   onRestart: () => void;
@@ -11,7 +11,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
   const [showLetter, setShowLetter] = useState(false);
   const [showSealing, setShowSealing] = useState(false);
   const [isSealed, setIsSealed] = useState(false);
-  const typingTextRef = useRef(textConfig.finalLetter.typedDefault);
+  const typingTextRef = useRef(content.finalLetter.typedDefault);
   const [typedText, setTypedText] = useState("");
   const typingTimerRef = useRef<number | null>(null);
 
@@ -85,7 +85,19 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
   };
 
   return (
-    <div className="font-display min-h-screen flex items-center justify-center py-10 px-4 bg-[#FFF4F8] relative overflow-hidden">
+    <div className="font-display min-h-screen flex items-center justify-center py-10 px-4 relative overflow-hidden">
+      {/* Romantic blurred background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url("https://images.pexels.com/photos/1024975/pexels-photo-1024975.jpeg")',
+            filter: 'blur(35px) brightness(0.5) sepia(0.2)',
+            opacity: 0.3
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FFF4F8] via-[rgba(255,240,245,0.8)] to-[#FFF0F5]" />
+      </div>
       {/* subtle grid-paper behind */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute inset-0 grid-paper" />
@@ -120,7 +132,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#fff0f4]/75">
           <div className="flex flex-col items-center gap-3">
             <div className="text-7xl animate-seal-spin">💌</div>
-            <div className="text-sm text-[#9a4c73]">{textConfig.finalLetter.sealingText}</div>
+            <div className="text-sm text-[#9a4c73]">{content.finalLetter.sealingText}</div>
           </div>
         </div>
       )}
@@ -132,70 +144,70 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
         }`}
       >
         {!isSealed ? (
-          <div className="bg-[#FFF8E7] rounded-3xl p-6 sm:p-8 shadow-xl border border-pink-100">
+          <div className="bg-[#FFF8E7] rounded-3xl p-8 sm:p-10 shadow-2xl shadow-pink-200/30 border-2 border-pink-200">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#f04299] flex items-center justify-center text-white shadow-md">
                   <Mail size={18} />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#1b0d14]">{textConfig.finalLetter.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#1b0d14]">{content.finalLetter.title}</h3>
               </div>
             </div>
 
             <article className="handwriting text-sm sm:text-base text-[#1b0d14] leading-relaxed space-y-4">
-              <p className="text-[#f04299] font-semibold">{textConfig.finalLetter.letterGreeting}</p>
+              <p className="text-[#f04299] font-semibold">{content.finalLetter.letterGreeting}</p>
 
               <p>
-                {textConfig.finalLetter.letterParagraphs[0]}
+                {content.finalLetter.letterParagraphs[0]}
               </p>
 
               <p className="text-[#7fbcd9]">
-                {textConfig.finalLetter.letterParagraphs[1]}
+                {content.finalLetter.letterParagraphs[1]}
               </p>
 
               <p>
-                {textConfig.finalLetter.letterParagraphs[2]}
+                {content.finalLetter.letterParagraphs[2]}
               </p>
 
               <p className="text-[#cdb4db]">
-                {textConfig.finalLetter.letterParagraphs[3]}
+                {content.finalLetter.letterParagraphs[3]}
               </p>
 
-              <p className="text-[#f04299] font-medium">{textConfig.finalLetter.letterParagraphs[4]}</p>
+              <p className="text-[#f04299] font-medium">{content.finalLetter.letterParagraphs[4]}</p>
             </article>
 
             <div className="mt-6 flex flex-col sm:flex-row justify-between gap-3 items-center">
-              <div className="text-xs text-[#9a4c73]">{textConfig.finalLetter.sealingNote}</div>
+              <div className="text-xs text-[#9a4c73]">{content.finalLetter.sealingNote}</div>
               <div className="flex gap-3">
                 <button
                   onClick={() => {
                     sealLetter();
                   }}
-                  className="rounded-full bg-gradient-to-r from-[#ff9aa8] to-[#ffd1dc] px-5 py-2.5 text-sm sm:text-base font-bold shadow-md hover:scale-105 transition"
+                  className="rounded-full bg-gradient-to-r from-[#ff9aa8] to-[#ffd1dc] px-6 py-3 text-sm sm:text-base font-bold shadow-lg shadow-pink-300/30 hover:scale-110 transition"
                 >
-                  {textConfig.finalLetter.sealButton}
+                  {content.finalLetter.sealButton}
                 </button>
 
                 <button
                   onClick={onRestart}
-                  className="rounded-full bg-[#9be7c4] px-4 py-2.5 text-sm sm:text-base font-medium shadow-md hover:brightness-95 transition"
+                  className="rounded-full bg-[#9be7c4] px-6 py-3 text-sm sm:text-base font-medium shadow-lg shadow-green-300/30 hover:brightness-110 transition"
                 >
-                  {textConfig.finalLetter.restartButton}
+                  {content.finalLetter.restartButton}
                 </button>
               </div>
             </div>
           </div>
         ) : (
-          <div className="bg-[#FFF8E7] rounded-3xl p-8 sm:p-10 shadow-2xl border border-pink-100 text-center">
+          <div className="bg-[#FFF8E7] rounded-3xl p-8 sm:p-10 shadow-2xl shadow-pink-300/40 border-2 border-pink-200 text-center">
             <div className="mx-auto mb-4 w-20 h-20 rounded-full bg-gradient-to-br from-[#ffbcd2] to-[#ffd1dc] flex items-center justify-center shadow-inner">
               <div className="text-4xl">💝</div>
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-black text-[#f04299] mb-2">
-              {textConfig.finalLetter.sealedTitle}
+              {content.finalLetter.sealedTitle}
             </h2>
             <p className="text-sm sm:text-base text-[#9a4c73] mb-5">
-              {textConfig.finalLetter.sealedSubtitle}
+              {content.finalLetter.sealedSubtitle}
             </p>
 
             <div className="flex justify-center gap-2 mb-5">
@@ -210,10 +222,10 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
             </div>
 
             <div className="text-lg sm:text-xl font-semibold text-[#1b0d14] mb-1">
-              <span className="text-[#c0396f]">{typedText || textConfig.finalLetter.typedDefault}</span>
+              <span className="text-[#c0396f]">{typedText || content.finalLetter.typedDefault}</span>
             </div>
             <div className="text-xs text-[#9a4c73] mb-6">
-              {new Date().toLocaleDateString(textConfig.finalLetter.dateLocale, {
+              {new Date().toLocaleDateString(content.finalLetter.dateLocale, {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
@@ -221,21 +233,21 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
               })}
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-3">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 mt-2">
               <button
                 onClick={onRestart}
-                className="rounded-full bg-[#f04299] text-white px-5 py-2.5 text-sm sm:text-base font-semibold shadow hover:scale-105 transition"
+                className="rounded-full bg-gradient-to-r from-[#f04299] to-[#f066b0] text-white px-7 py-3 text-sm sm:text-base font-bold shadow-lg shadow-pink-300/30 hover:scale-110 transition"
               >
-                {textConfig.finalLetter.experienceAgain}
+                {content.finalLetter.experienceAgain}
               </button>
 
               <button
                 onClick={() => {
                   sendKiss();
                 }}
-                className="rounded-full bg-[#9be7c4] px-5 py-2.5 text-sm sm:text-base font-medium shadow hover:brightness-95 transition"
+                className="rounded-full bg-[#9be7c4] px-7 py-3 text-sm sm:text-base font-bold shadow-lg shadow-green-300/30 hover:brightness-110 transition"
               >
-                {textConfig.finalLetter.sendKissButton}
+                {content.finalLetter.sendKissButton}
               </button>
             </div>
           </div>
