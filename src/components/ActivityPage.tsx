@@ -153,7 +153,7 @@ export default function ActivityPage({
                 {/* Envelope */}
                 <div className="relative w-80 h-56 mx-auto">
                   {/* Envelope Body */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#FFE4E6] to-[#FFF0F5] rounded-lg shadow-lg border-2 border-pink-200" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#FFE4E6] to-[#FFF0F5] rounded-lg shadow-2xl shadow-pink-200/40 border-2 border-pink-300" />
                   
                   {/* Envelope Flap */}
                   <div 
