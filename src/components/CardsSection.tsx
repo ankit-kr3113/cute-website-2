@@ -115,8 +115,8 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
         {/* Main Panel - More compact */}
         <div className="bg-[#FFF8E7] rounded-2xl sm:rounded-3xl p-3 sm:p-5 md:p-6 border border-pink-200 shadow-xl animate-fadeIn">
 
-          {/* Cards Grid - Smaller cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+          {/* Cards Grid - Improved spacing */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
             {cards.map((card, index) => (
               <div
                 key={card.id}
