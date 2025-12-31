@@ -156,8 +156,8 @@ export default function ActivityPage({
                   <div className="absolute inset-0 bg-gradient-to-br from-[#FFE4E6] to-[#FFF0F5] rounded-lg shadow-2xl shadow-pink-200/40 border-2 border-pink-300" />
                   
                   {/* Envelope Flap */}
-                  <div 
-                    className={`absolute -top-1 left-0 right-0 h-28 bg-gradient-to-br from-[#FFD1DC] to-[#FFC0CB] transition-all duration-800 origin-top ${
+                  <div
+                    className={`absolute -top-1 left-0 right-0 h-28 bg-gradient-to-br from-[#FFD1DC] to-[#FFC0CB] transition-all duration-800 origin-top shadow-md ${
                       isEnvelopeOpen ? '-rotate-12 translate-y-2' : ''
                     }`}
                     style={{
