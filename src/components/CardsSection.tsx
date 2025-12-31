@@ -207,13 +207,13 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
               <p className="text-sm text-[#9a4c73] leading-relaxed">
                 {content.cards.popup.message}
               </p>
-              <div className="space-y-2.5 pt-1">
+              <div className="space-y-2.5 pt-2">
                 <button
                   onClick={() => {
                     closePopup();
                     onNext();
                   }}
-                  className="w-full inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#f04299] text-white font-semibold shadow-lg transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300 text-sm"
+                  className="w-full inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-[#f04299] to-[#f066b0] text-white font-bold shadow-lg shadow-pink-300/30 transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-400/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
                 >
                   {content.cards.popup.openFinal}
                 </button>
