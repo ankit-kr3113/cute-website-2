@@ -97,7 +97,7 @@ const LandingPage: React.FC<Props> = ({
         />
 
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-pink-200 pb-3 mb-6">
+        <div className="flex items-center justify-between border-b-2 border-pink-200 pb-4 mb-8">
           <div className="flex items-center gap-2">
             <span className="w-3.5 h-3.5 rounded-full bg-[#ff9ec7] border border-[#f081a9]" />
             <span className="w-3.5 h-3.5 rounded-full bg-[#fff07a] border border-[#f0cf52]" />
