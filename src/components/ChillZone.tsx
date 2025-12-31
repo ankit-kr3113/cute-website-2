@@ -227,7 +227,7 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
           <div className="mb-8 h-28 flex items-center justify-center">
             {/* Compact Now Playing Display */}
             {activeIndex != null ? (
-              <div className="flex items-center gap-4 p-3 rounded-lg bg-white/70 border border-pink-100 shadow-sm max-w-lg w-full mx-auto">
+              <div className="flex items-center gap-4 p-4 sm:p-5 rounded-xl bg-white/85 backdrop-blur-sm border border-pink-200 shadow-lg shadow-pink-200/20 max-w-lg w-full mx-auto">
                 <div className="w-12 h-12 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0 shadow-sm">
                   <img
                     src={tracks[activeIndex].cover}
