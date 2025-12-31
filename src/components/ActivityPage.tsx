@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import textConfig from "../textConfig";
+import content from "../data/content";
 import LetterImg from "../imgs/letter.png"
 import StampSVG from "./StampSVG";
 
@@ -19,9 +19,9 @@ export default function ActivityPage({
   const [sparkles, setSparkles] = useState<{ id: number; x: number; y: number }[]>([]);
 
   // Get the letter content from separate fields
-  const greeting = textConfig.letter.letterGreeting;
-  const bodyContent = textConfig.letter.letterMessage;
-  const signature = textConfig.letter.letterSignature;
+  const greeting = content.letter.letterGreeting;
+  const bodyContent = content.letter.letterMessage;
+  const signature = content.letter.letterSignature;
 
   // Handle envelope opening
   const handleEnvelopeClick = () => {
@@ -114,10 +114,10 @@ export default function ActivityPage({
         <div className="flex items-center justify-center gap-2 mb-6 animate-slideDown">
           <div className="text-center">
             <h2 className="text-[#f04299] text-lg sm:text-xl font-bold leading-tight">
-              {textConfig.letter.headerTitle}
+              {content.letter.headerTitle}
             </h2>
             <div className="text-xs text-[#9a4c73] mt-1">
-              {textConfig.letter.headerSubtitle}
+              {content.letter.headerSubtitle}
             </div>
           </div>
         </div>
@@ -185,9 +185,9 @@ export default function ActivityPage({
 
                 {!isEnvelopeOpen && (
                   <div className="text-center mt-6">
-                    <p className="text-sm text-[#9a4c73] mb-2">{textConfig.letter.envelopeClickHint}</p>
+                    <p className="text-sm text-[#9a4c73] mb-2">{content.letter.envelopeClickHint}</p>
                     <div className="inline-block px-4 py-2 bg-pink-50 rounded-full text-xs font-medium text-[#f04299] border border-pink-200 animate-pulse">
-                      {textConfig.letter.specialDeliveryText}
+                      {content.letter.specialDeliveryText}
                     </div>
                   </div>
                 )}
@@ -269,7 +269,7 @@ export default function ActivityPage({
                     onClick={onNext}
                     className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
                   >
-                    {textConfig.letter.continueButton}
+                    {content.letter.continueButton}
                   </button>
                 </div>
               )}
