@@ -117,11 +117,11 @@ const LandingPage: React.FC<Props> = ({
 
         {/* Letter Content */}
         <div className="text-center space-y-6 relative">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1b0d14] leading-snug">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#1b0d14] leading-tight tracking-tight mb-2">
             {content.landing.title}
           </h1>
 
-          <div className="text-[#1b0d14]/80 text-base md:text-lg leading-relaxed relative mx-auto max-w-lg">
+          <div className="text-[#1b0d14]/75 text-base md:text-lg leading-relaxed relative mx-auto max-w-lg">
             <p>
               {content.landing.subtitle}
             </p>
