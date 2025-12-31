@@ -199,6 +199,17 @@ export default function ActivityPage({
               <div className="bg-white rounded-xl p-6 sm:p-8 shadow-inner border border-pink-100 min-h-[350px] relative">
                 {/* Paper texture background */}
                 <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-pink-50 to-transparent rounded-xl" />
+
+                {/* Romantic watermark photo */}
+                <div
+                  className="absolute top-4 right-4 w-28 h-28 sm:w-32 sm:h-32 rounded-lg overflow-hidden opacity-8 pointer-events-none"
+                  style={{
+                    backgroundImage: 'url("https://images.pexels.com/photos/28800805/pexels-photo-28800805.jpeg")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: 'grayscale(80%) sepia(20%)',
+                  }}
+                />
                 
                 {/* Letter image - positioned relative to this letter container */}
                 <div 
