@@ -275,10 +275,10 @@ export default function ActivityPage({
 
               {/* Continue Button */}
               {showContinue && (
-                <div className="flex justify-center mt-6 animate-slideUp">
+                <div className="flex justify-center mt-8 animate-slideUp">
                   <button
                     onClick={onNext}
-                    className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
+                    className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-gradient-to-r from-[#f04299] to-[#f066b0] text-white font-bold shadow-lg shadow-pink-300/30 transition-all transform hover:scale-110 active:scale-95 hover:shadow-pink-400/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
                   >
                     {content.letter.continueButton}
                   </button>
