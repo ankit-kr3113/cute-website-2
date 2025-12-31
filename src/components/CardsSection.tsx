@@ -127,7 +127,7 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
                 <div className={`relative w-full h-full transition-transform duration-700 preserve-3d ${flippedCards.includes(card.id) ? 'rotate-y-180' : ''
                   }`}>
                   {/* Front of card - GIF */}
-                  <div className="absolute w-full h-full rounded-lg border-2 border-white shadow-lg backface-hidden overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300">
+                  <div className="absolute w-full h-full rounded-xl border-3 border-white shadow-xl shadow-pink-200/30 backface-hidden overflow-hidden hover:shadow-2xl hover:shadow-pink-300/40 hover:scale-105 transition-all duration-300">
                     <div className="relative w-full h-full">
                       <img
                         src={card.localGif}
