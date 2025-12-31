@@ -221,7 +221,7 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
         </div>
 
         {/* Main Panel - centered with proper margins */}
-        <div className="bg-[#FFF8E7] rounded-2xl p-4 sm:p-5 md:p-6 border border-pink-200 shadow-md animate-fadeIn mx-auto">
+        <div className="bg-[#FFF8E7] rounded-2xl p-6 sm:p-7 md:p-8 border-2 border-pink-200 shadow-xl shadow-pink-200/20 animate-fadeIn mx-auto">
 
           {/* Fixed height container for consistent spacing */}
           <div className="mb-8 h-28 flex items-center justify-center">
