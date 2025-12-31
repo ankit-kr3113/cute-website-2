@@ -198,7 +198,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
             </div>
           </div>
         ) : (
-          <div className="bg-[#FFF8E7] rounded-3xl p-8 sm:p-10 shadow-2xl border border-pink-100 text-center">
+          <div className="bg-[#FFF8E7] rounded-3xl p-8 sm:p-10 shadow-2xl shadow-pink-300/40 border-2 border-pink-200 text-center">
             <div className="mx-auto mb-4 w-20 h-20 rounded-full bg-gradient-to-br from-[#ffbcd2] to-[#ffd1dc] flex items-center justify-center shadow-inner">
               <div className="text-4xl">💝</div>
             </div>
