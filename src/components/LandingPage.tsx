@@ -134,7 +134,7 @@ const LandingPage: React.FC<Props> = ({
           {/* Continue Button */}
           <button
             onClick={handleEnter}
-            className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
+            className="mt-6 inline-flex items-center justify-center px-10 py-4 rounded-full bg-gradient-to-r from-[#f04299] to-[#f066b0] text-white font-bold shadow-lg shadow-pink-300/30 transition-all transform hover:scale-110 active:scale-95 hover:shadow-pink-400/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
           >
             {content.landing.button}
           </button>
