@@ -39,6 +39,18 @@ const LandingPage: React.FC<Props> = ({
 
   return (
     <div className="font-display relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 md:px-10">
+      {/* Romantic blurred background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url("https://images.pexels.com/photos/6232552/pexels-photo-6232552.jpeg")',
+            filter: 'blur(40px) brightness(0.6)',
+            opacity: 0.25
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(255,182,193,0.15)] via-transparent to-[rgba(255,240,245,0.15)]" />
+      </div>
       {/* Floating pastel icons */}
       <svg
         className="absolute top-10 left-10 w-12 h-12 animate-float-slow"
