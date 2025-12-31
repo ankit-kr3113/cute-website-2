@@ -183,14 +183,14 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                   onClick={() => {
                     sealLetter();
                   }}
-                  className="rounded-full bg-gradient-to-r from-[#ff9aa8] to-[#ffd1dc] px-5 py-2.5 text-sm sm:text-base font-bold shadow-md hover:scale-105 transition"
+                  className="rounded-full bg-gradient-to-r from-[#ff9aa8] to-[#ffd1dc] px-6 py-3 text-sm sm:text-base font-bold shadow-lg shadow-pink-300/30 hover:scale-110 transition"
                 >
                   {content.finalLetter.sealButton}
                 </button>
 
                 <button
                   onClick={onRestart}
-                  className="rounded-full bg-[#9be7c4] px-4 py-2.5 text-sm sm:text-base font-medium shadow-md hover:brightness-95 transition"
+                  className="rounded-full bg-[#9be7c4] px-6 py-3 text-sm sm:text-base font-medium shadow-lg shadow-green-300/30 hover:brightness-110 transition"
                 >
                   {content.finalLetter.restartButton}
                 </button>
