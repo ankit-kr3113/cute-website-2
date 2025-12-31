@@ -87,7 +87,7 @@ const LandingPage: React.FC<Props> = ({
 
       {/* Main Diary Window */}
       <div
-        className="relative w-full max-w-2xl bg-[#FFF8E7] rounded-2xl shadow-lg border border-pink-200 p-6 sm:p-8 md:p-10 z-10 animate-fadeIn mx-auto"
+        className="relative w-full max-w-2xl bg-[#FFF8E7] rounded-2xl shadow-2xl shadow-pink-200/30 border-2 border-pink-200 p-6 sm:p-8 md:p-10 z-10 animate-fadeIn mx-auto"
       >
         {/* Floating transparent GIF */}
         <img
