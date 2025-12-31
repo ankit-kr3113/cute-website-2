@@ -202,10 +202,10 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
             <div className="text-center space-y-3 sm:space-y-4">
               <div className="text-3xl sm:text-4xl animate-bounce">🎉</div>
               <h3 className="text-lg sm:text-xl font-bold text-[#f04299]">
-                {textConfig.cards.popup.title}
+                {content.cards.popup.title}
               </h3>
               <p className="text-sm text-[#9a4c73] leading-relaxed">
-                {textConfig.cards.popup.message}
+                {content.cards.popup.message}
               </p>
               <div className="space-y-2.5 pt-1">
                 <button
@@ -215,13 +215,13 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
                   }}
                   className="w-full inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#f04299] text-white font-semibold shadow-lg transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300 text-sm"
                 >
-                  {textConfig.cards.popup.openFinal}
+                  {content.cards.popup.openFinal}
                 </button>
                 <button
                   onClick={closePopup}
                   className="w-full text-xs text-[#9a4c73] hover:text-[#f04299] transition-colors"
                 >
-                  {textConfig.cards.popup.stay}
+                  {content.cards.popup.stay}
                 </button>
               </div>
             </div>
