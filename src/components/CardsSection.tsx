@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import textConfig from '../textConfig';
+import content from '../data/content';
 
 import Img1 from "../imgs/pic1.gif"
 import Img2 from "../imgs/pic2.gif"
@@ -23,19 +23,19 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
   const cards: Card[] = [
     {
       id: 1,
-      message: textConfig.cards.cardMessages[0],
+      message: content.cards.cardMessages[0],
       localGif: Img1,
       gradient: "from-pink-200 to-purple-200"
     },
     {
       id: 2,
-      message: textConfig.cards.cardMessages[1],
+      message: content.cards.cardMessages[1],
       localGif: Img2,
       gradient: "from-blue-200 to-teal-200"
     },
     {
       id: 3,
-      message: textConfig.cards.cardMessages[2],
+      message: content.cards.cardMessages[2],
       localGif: Img3,
       gradient: "from-yellow-200 to-orange-200"
     },
@@ -104,10 +104,10 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
         <div className="flex items-center justify-center gap-2 mb-4 sm:mb-6 animate-slideDown">
           <div className="text-center">
             <h2 className="text-[#f04299] text-base sm:text-xl font-bold leading-tight">
-              {textConfig.cards.heading}
+              {content.cards.heading}
             </h2>
             <div className="text-xs text-[#9a4c73] mt-0.5">
-              {textConfig.cards.subheading}
+              {content.cards.subheading}
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
                       {/* Tap indicator */}
                       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="px-2 py-1 bg-white/95 rounded-full text-xs font-medium text-[#9a4c73] border border-pink-100 shadow-lg backdrop-blur-sm animate-pulse">
-                          {textConfig.cards.tapLabel}
+                          {content.cards.tapLabel}
                         </div>
                       </div>
 
@@ -177,10 +177,10 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
           <div className="text-center py-2 sm:py-3">
             <div className="text-xs sm:text-sm text-[#9a4c73] font-medium">
               {flippedCards.length === 0
-                ? textConfig.cards.progress.start
+                ? content.cards.progress.start
                 : flippedCards.length === cards.length
-                  ? textConfig.cards.progress.complete
-                  : textConfig.cards.progress.discovered(flippedCards.length, cards.length)
+                  ? content.cards.progress.complete
+                  : content.cards.progress.discovered(flippedCards.length, cards.length)
               }
             </div>
 
