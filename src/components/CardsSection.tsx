@@ -120,7 +120,7 @@ const CardsSection: React.FC<CardsSectionProps> = ({ onNext }) => {
             {cards.map((card, index) => (
               <div
                 key={card.id}
-                className="relative h-44 sm:h-48 md:h-52 cursor-pointer perspective-1000 group animate-slideUp"
+                className="relative h-56 sm:h-60 md:h-64 cursor-pointer perspective-1000 group animate-slideUp"
                 style={{ animationDelay: `${index * 0.2}s` }}
                 onClick={() => flipCard(card.id)}
               >
