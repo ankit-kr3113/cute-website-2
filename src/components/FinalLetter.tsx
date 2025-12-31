@@ -233,10 +233,10 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
               })}
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-3">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 mt-2">
               <button
                 onClick={onRestart}
-                className="rounded-full bg-[#f04299] text-white px-5 py-2.5 text-sm sm:text-base font-semibold shadow hover:scale-105 transition"
+                className="rounded-full bg-gradient-to-r from-[#f04299] to-[#f066b0] text-white px-7 py-3 text-sm sm:text-base font-bold shadow-lg shadow-pink-300/30 hover:scale-110 transition"
               >
                 {content.finalLetter.experienceAgain}
               </button>
@@ -245,7 +245,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                 onClick={() => {
                   sendKiss();
                 }}
-                className="rounded-full bg-[#9be7c4] px-5 py-2.5 text-sm sm:text-base font-medium shadow hover:brightness-95 transition"
+                className="rounded-full bg-[#9be7c4] px-7 py-3 text-sm sm:text-base font-bold shadow-lg shadow-green-300/30 hover:brightness-110 transition"
               >
                 {content.finalLetter.sendKissButton}
               </button>
