@@ -144,7 +144,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
         }`}
       >
         {!isSealed ? (
-          <div className="bg-[#FFF8E7] rounded-3xl p-6 sm:p-8 shadow-xl border border-pink-100">
+          <div className="bg-[#FFF8E7] rounded-3xl p-8 sm:p-10 shadow-2xl shadow-pink-200/30 border-2 border-pink-200">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#f04299] flex items-center justify-center text-white shadow-md">
