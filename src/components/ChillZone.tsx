@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import textConfig from "../textConfig";
+import content from "../data/content";
 
 import music1 from "../music/music1.mp3";
 import music2 from "../music/music2.mp3";
@@ -23,9 +23,9 @@ interface ChillZoneProps {
 
 export default function ChillZone({ onNext }: ChillZoneProps) {
   const tracks: Track[] = [
-    { id: 1, title: textConfig.chillZone.tracks[0].title, caption: textConfig.chillZone.tracks[0].caption, src: music1, cover: cover1 },
-    { id: 2, title: textConfig.chillZone.tracks[1].title, caption: textConfig.chillZone.tracks[1].caption, src: music2, cover: cover2 },
-    { id: 3, title: textConfig.chillZone.tracks[2].title, caption: textConfig.chillZone.tracks[2].caption, src: music3, cover: cover3 },
+    { id: 1, title: content.chillZone.tracks[0].title, caption: content.chillZone.tracks[0].caption, src: music1, cover: cover1 },
+    { id: 2, title: content.chillZone.tracks[1].title, caption: content.chillZone.tracks[1].caption, src: music2, cover: cover2 },
+    { id: 3, title: content.chillZone.tracks[2].title, caption: content.chillZone.tracks[2].caption, src: music3, cover: cover3 },
   ];
 
   const audioRefs = useRef<Array<HTMLAudioElement | null>>([]);
@@ -212,10 +212,10 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="text-center">
             <h2 className="text-[#f04299] text-lg font-bold leading-tight">
-              {textConfig.chillZone.heading}
+              {content.chillZone.heading}
             </h2>
             <div className="text-xs text-[#9a4c73]">
-              {textConfig.chillZone.subheading}
+              {content.chillZone.subheading}
             </div>
           </div>
         </div>
@@ -281,7 +281,7 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
               </div>
             ) : (
               <div className="text-base text-[#9a4c73] font-medium text-center">
-                {textConfig.chillZone.chooseTrackHint}
+                {content.chillZone.chooseTrackHint}
               </div>
             )}
           </div>
@@ -403,7 +403,7 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
               onClick={onNext}
               className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
             >
-              {textConfig.chillZone.continueButton}
+              {content.chillZone.continueButton}
             </button>
           </div>
         </div>
