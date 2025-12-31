@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import IntroGif from "../imgs/intro.gif"
 import IntroImg from "../imgs/intro.png"
-import textConfig from "../textConfig";
+import content from "../data/content";
 
 type Props = {
   onEnter?: () => void;
@@ -30,9 +30,9 @@ const LandingPage: React.FC<Props> = ({
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
-      setTypedText(textConfig.landing.lastLine.slice(0, i));
+      setTypedText(content.landing.lastLine.slice(0, i));
       i++;
-      if (i > textConfig.landing.lastLine.length) clearInterval(interval);
+      if (i > content.landing.lastLine.length) clearInterval(interval);
     }, 40);
     return () => clearInterval(interval);
   }, []);
@@ -106,12 +106,12 @@ const LandingPage: React.FC<Props> = ({
         {/* Letter Content */}
         <div className="text-center space-y-6 relative">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1b0d14] leading-snug">
-            {textConfig.landing.title}
+            {content.landing.title}
           </h1>
 
           <div className="text-[#1b0d14]/80 text-base md:text-lg leading-relaxed relative mx-auto max-w-lg">
             <p>
-              {textConfig.landing.subtitle}
+              {content.landing.subtitle}
             </p>
             <p className="pt-3">
               <span className="font-semibold text-[#f04299]">{typedText}</span>
@@ -124,7 +124,7 @@ const LandingPage: React.FC<Props> = ({
             onClick={handleEnter}
             className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
           >
-            {textConfig.landing.button}
+            {content.landing.button}
           </button>
 
           {/* Landing page decorative image - positioned at bottom left of note */}
@@ -149,7 +149,7 @@ const LandingPage: React.FC<Props> = ({
 
       {/* Footer */}
       <div className="mt-8 text-xs text-[#9a4c73] text-center">
-        {textConfig.landing.footer}
+        {content.landing.footer}
       </div>
 
       {/* Animations */}
